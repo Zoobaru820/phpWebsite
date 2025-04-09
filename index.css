@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+  }
+
+  header {
+    background-color: #31708E;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    position: relative;
+  }
+
+  nav {
+    background-color: #31708E;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #8FC1E3;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    gap: 2rem;
+  }
+
+  .box {
+    background-color: #F7F9FB;
+    border: 2px solid #5085A5;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 300px;
+  }
+
+  .box h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .box input[type="text"],
+  .box input[type="email"],
+  .box input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .box button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #31708E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .box button:hover {
+    background-color: #8FC1E3;
+  }
