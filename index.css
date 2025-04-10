@@ -34,7 +34,8 @@ body {
     color: #8FC1E3;
   }
 
-  .container {
+  .form-container {
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,9 +86,7 @@ body {
 
   /* codas profile stuff */
 
-  .container{
-    flex-direction: column;
-}
+  
 
 .box{
     width: 40vw;
