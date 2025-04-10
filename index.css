@@ -4,11 +4,21 @@ body {
     background-color: white;
   }
 
+  @font-face {
+    font-family: Artegra Suprema;
+        src: url(Suprema Regular.ttf);
+  }
+
+  @font-face {
+    font-family: Sanchez;
+    src: url(Sanchez-Regular.ttf)
+  }
   header {
     background-color: #31708E;
     color: white;
     padding: 1rem;
     text-align: center;
+    font-family: Sanchez;
     font-size: 1.5rem;
     position: relative;
   }
@@ -24,7 +34,7 @@ body {
   nav a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-family: Artegra Suprema;
     transition: color 0.3s;
   }
 
@@ -50,6 +60,7 @@ body {
 
   .box h2 {
     text-align: center;
+    font-family: Artegra Suprema;
     margin-bottom: 1rem;
   }
 
@@ -57,6 +68,7 @@ body {
   .box input[type="email"],
   .box input[type="password"] {
     width: 100%;
+    font-family: Artegra Suprema;
     padding: 0.5rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
@@ -67,6 +79,7 @@ body {
     width: 100%;
     padding: 0.75rem;
     background-color: #31708E;
+    font-family: Artegra Suprema;
     color: white;
     border: none;
     border-radius: 5px;
