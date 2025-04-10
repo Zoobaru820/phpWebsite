@@ -77,3 +77,79 @@ body {
   .box button:hover {
     background-color: #8FC1E3;
   }
+
+  /* codas profile stuff */
+
+  .container{
+    flex-direction: column;
+}
+
+.box{
+    width: 40vw;
+    padding: 1rem 2rem;
+}
+
+.box h2 {
+    text-align: left;
+  }
+
+.profile-box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .profile-pic img{
+    width: auto;
+    height: 120px;
+    border-radius: 50%;
+  }
+
+a{
+    color: #31708E;
+    text-decoration: none;
+
+}
+
+  .active{
+    color: gray;
+    font-size: .8em;
+  }
+
+   b {
+    margin-right: 5px;
+  }
+
+  .tag {
+    background-color: #31708E;
+    border: none;
+    color: white;
+    padding: .5rem 0.75rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .tag:hover {
+    background-color: #8FC1E3;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: .75rem 1rem;
+    background-color: #31708E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+   button:hover {
+    background-color: #8FC1E3;
+  }
+
+  /* end profile */
+  
+
