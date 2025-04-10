@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request Help - People Helping People</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Request Help</h1>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <form>
+        <label for="title">Job Title<span>*</span></label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Description<span>*</span></label>
+        <textarea id="description" name="description" rows="5" required></textarea>
+
+        <label for="category">Category<span>*</span></label>
+        <select id="category" name="category" required>
+          <option value="">Select a category</option>
+          <option value="lawncare">Lawn Care</option>
+          <option value="groceries">Grocery Delivery</option>
+          <option value="housework">Housework</option>
+          <option value="tech">Tech Help</option>
+        </select>
+
+        <label for="location">Location<span>*</span></label>
+        <input type="text" id="location" name="location" required>
+
+        <label for="date">Date Needed<span>*</span></label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Submit Request</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
+
+
+<style>
+    /* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: white;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #31708E;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Form Container */
+.form-container {
+  background-color: #F7F9FB;
+  border: 2px solid #5085A5;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Labels & Inputs */
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form span {
+  color: red;
+}
+
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+}
+
+/* Button */
+button {
+  margin-top: 20px;
+  background-color: #31708E;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #8FC1E3;
+}
+</style>
