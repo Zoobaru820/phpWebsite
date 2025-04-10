@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>People Helping - Job Dashboard</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sanchez&family=Suprema:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Color palette */
+    :root {
+      --header-color: #31708E;
+      --background-color: #ffffff;
+      --box-color: #F7F9FB;
+      --box-border: #5085A5;
+      --button-hover: #8FC1E3;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Suprema', sans-serif;
+      background-color: var(--background-color);
+      color: #333;
+    }
+
+    header {
+      background-color: var(--header-color);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-family: 'Sanchez', serif;
+    }
+
+    .dashboard-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .job-card {
+      background-color: var(--box-color);
+      border: 1px solid var(--box-border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .job-title {
+      font-family: 'Sanchez', serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--header-color);
+    }
+
+    .job-meta {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .job-description {
+      margin-bottom: 1rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: var(--header-color);
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      font-family: 'Suprema', sans-serif;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--button-hover);
+    }
+
+    @media (max-width: 600px) {
+      .btn-group {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Job Request Dashboard</h1>
+  </header>
+
+  <div class="dashboard-container">
+
+    <div class="job-card">
+      <div class="job-title">Lawn Mowing</div>
+      <div class="job-meta">Requested by: John D. | Location: Madison, WI</div>
+      <div class="job-description">
+        I need someone to help mow my front and back lawn. Should take about 45 minutes.
+      </div>
+      <div class="btn-group">
+        <button class="btn">View Details</button>
+        <button class="btn">Mark as Completed</button>
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-title">Grocery Delivery</div>
+      <div class="job-meta">Requested by: Maria T. | Location: Middleton, WI</div>
+      <div class="job-description">
+        Need help picking up groceries from the local store and dropping them off at my apartment.
+      </div>
+      <div class="btn-group">
+        <button class="btn">View Details</button>
+        <button class="btn">Mark as Completed</button>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
