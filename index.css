@@ -215,4 +215,80 @@ a{
 
   /* end profile */
   
+ /* Button styles */
+ #toastBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
 
+#toastBtn.sent {
+  background-color: #8FC1E3;
+}
+
+/* Toast container */
+.toast-container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.toast {
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 12px 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  min-width: 200px;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toast.show {
+  display: flex;
+  opacity: 1;
+  animation: fadein 0.5s, fadeout 0.5s 5.5s forwards;
+}
+
+.toast-body {
+  font-size: 16px;
+  color: #333;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color:black;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.btn-close:hover{
+  background: none;
+  color:gray;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
+}
