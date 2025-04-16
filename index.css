@@ -127,6 +127,31 @@ body {
   min-width: 120px;
 }
 
+.job-title{
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-bottom: 5px;
+}
+
+#dashboard-category{
+  border-radius: 8px;   /* Rounds the corners of the dropdown */
+  padding: 0.5rem 1rem; /* Adds space inside the dropdown */
+  border: 1px solid #ccc; /* Gives it a light border */
+  font-size: 1rem;       /* Makes the text more readable */
+  background-color: #fff; /* Ensures it has a clean background */
+  cursor: pointer; 
+}
+
+#dashboard-date {
+  border-radius: 8px;        /* Rounds the corners */
+  padding: 0.5rem 1rem;      /* Adds space inside the input box */
+  border: 1px solid #ccc;    /* Light gray border */
+  font-size: 1rem;           /* Makes text size more readable */
+  background-color: #fff;    /* Keeps background clean */
+  cursor: pointer;           /* Cursor changes on hover (optional) */
+  margin-bottom: 1rem;        /* Adds space below the element */
+}
+
   .box button {
     width: 100%;
     padding: 0.75rem;
@@ -173,6 +198,8 @@ a{
     text-decoration: none;
 
 }
+
+
 
   .active{
     color: gray;
