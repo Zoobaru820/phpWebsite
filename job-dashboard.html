@@ -7,6 +7,56 @@
   <link rel="stylesheet" href="index.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Sanchez&family=Suprema:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    #accordion-content {
+      display: none;
+    }
+
+    #accordion-less-btn {
+      display: block;
+      margin: 20px auto; /* Center the button */
+      padding: 10px 20px; /* Add padding */
+    }
+
+    /* Ensure spacing between the last two job posts in the accordion */
+    #accordion-content .box + .box {
+      margin-top: 20px; /* Add spacing between consecutive job posts in the accordion */
+    }
+
+    /* Toast styles */
+    .toast-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .toast {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    .toast .btn-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
@@ -15,7 +65,7 @@
   </header>
 
   <nav>
-    <a href="/JobDashboard.html">Search</a>
+    <a href="/job-dashboard.html">Search</a>
     <a href="/profile.html">View Volunteers</a>
     <a href="/postRequest.html">Post a Request</a>
   </nav>
@@ -31,7 +81,7 @@
       </div>
       <div class="DashboardBtn-group">
         <button class="btn">View Details</button>
-        <button class="btn">Accept</button>
+        <button class="btn" onclick="showToast('Lawn Mowing accepted!')">Accept</button>
       </div>
     </div>
 
@@ -43,10 +93,87 @@
       </div>
       <div class="DashboardBtn-group">
         <button class="btn">View Details</button>
-        <button class="btn">Accept</button>
+        <button class="btn" onclick="showToast('Grocery Delivery accepted!')">Accept</button>
       </div>
     </div>
 
+    <!-- Accordion Section -->
+    <div class="accordion">
+      <button class="btn" id="accordion-btn" onclick="toggleAccordion()">Show More</button>
+      <div id="accordion-content">
+        <div class="box">
+          <div class="job-title">House Cleaning</div>
+          <div class="job-meta">Requested by: Sarah L. | Location: Sun Prairie, WI</div>
+          <div class="job-description">
+            Looking for someone to help clean my house, including vacuuming and dusting.
+          </div>
+          <div class="DashboardBtn-group">
+            <button class="btn">View Details</button>
+            <button class="btn" onclick="showToast('House Cleaning accepted!')">Accept</button>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="job-title">Tech Support</div>
+          <div class="job-meta">Requested by: Mike R. | Location: Verona, WI</div>
+          <div class="job-description">
+            Need assistance setting up a new computer and transferring files from the old one.
+          </div>
+          <div class="DashboardBtn-group">
+            <button class="btn">View Details</button>
+            <button class="btn" onclick="showToast('Tech Support accepted!')">Accept</button>
+          </div>
+        </div>
+
+        <!-- Show Less Button -->
+        <button class="btn" id="accordion-less-btn" onclick="toggleAccordion()">Show Less</button>
+      </div>
+    </div>
   </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container">
+    <div id="dynamicToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-body"></div>
+      <button type="button" class="btn-close" aria-label="Close">&times;</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleAccordion() {
+      const content = document.getElementById('accordion-content');
+      const showMoreButton = document.getElementById('accordion-btn');
+      const showLessButton = document.getElementById('accordion-less-btn');
+
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        showMoreButton.style.display = 'none';
+      } else {
+        content.style.display = 'none';
+        showMoreButton.style.display = 'inline-block';
+      }
+    }
+
+    function showToast(message) {
+      const toastEl = document.getElementById('dynamicToast');
+      const toastBody = toastEl.querySelector('.toast-body');
+      const closeBtn = toastEl.querySelector('.btn-close');
+
+      toastBody.textContent = message;
+
+      // Show the toast
+      toastEl.classList.add('show');
+
+      // Hide the toast after 3 seconds
+      setTimeout(() => {
+        toastEl.classList.remove('show');
+      }, 3000);
+
+      // Close button functionality
+      closeBtn.addEventListener('click', () => {
+        toastEl.classList.remove('show');
+      });
+    }
+  </script>
 </body>
 </html>

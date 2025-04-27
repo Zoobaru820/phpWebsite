@@ -150,6 +150,12 @@ body {
   cursor: pointer; 
 }
 
+.dashboard-wrapper .box {
+  width: 100%; /* Make the job posts take the full width of the wrapper */
+  max-width: 30vw; /* Add a max width to prevent them from becoming too wide */
+  margin: 0 auto; /* Center the job posts horizontally */
+}
+
 #dashboard-date {
   border-radius: 8px;        /* Rounds the corners */
   padding: 0.5rem 1rem;      /* Adds space inside the input box */
