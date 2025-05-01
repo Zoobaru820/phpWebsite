@@ -1,111 +1,231 @@
+/* page styles */
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: white;
-  }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
 
-  
-  header {
-    background-color: #31708E;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    font-family: Sanchez;
-    font-size: 1.5rem;
-    position: relative;
-  }
+a {
+  color: #31708e;
+  text-decoration: none;
+  transition: color 0.3s;
+}
 
-  header a{
-    color: white;
-  }
-  
-  header h1 {
-    font-size: 1.5rem;
-    font-family: Sanchez;
-  }
+a:hover{
+  color:#8fc1e3;
+  transition: color 0.3s;
+}
 
-  nav {
-    background-color: #31708E;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding: 0.5rem 0;
-  }
+b {
+  margin-right: 5px;
+}
 
-  nav a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-    font-family: 'Suprema', sans-serif;
-  }
+h3 {
+  margin: 0;
+  font-weight: normal;
+}
 
-  nav a:hover {
-    color: #8FC1E3;
-  }
+button {
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #31708e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  .form-container {
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    gap: 2rem;
-  }
+button:hover {
+  background-color: #8fc1e3;
+}
 
-  .Card {
-    background-color: #F7F9FB;
-    border: 2px solid #5085A5;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 300px;
-  }
+/* header and nav */
 
-  .Card h2 {
-    text-align: center;
-    font-family: 'Suprema', sans-serif;
-    margin-bottom: 1rem;
-  }
+header {
+  background-color: #31708e;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-family: Sanchez;
+  font-size: 1.5rem;
+  position: relative;
+}
 
-  .Card input[type="text"],
-  .Card input[type="email"],
-  .Card input[type="password"] {
-    width: 100%;
-    padding: 0.5rem;
-    font-family: 'Suprema', sans-serif;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;  
-  }
+header a {
+  color: white;
+}
 
-  form label{
-    font-weight: bold;
-    margin-top: 1rem;
-    display: block;
-  }
+header h1 {
+  font-size: 1.5rem;
+  font-family: Sanchez;
+}
 
-  form span {
-    color: red;
-    margin-left: 4px;
-  }
+nav {
+  background-color: #31708e;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
 
-  #date{
-    margin-bottom: 1rem;
-  }
+nav a {
+  color: white;
+  text-decoration: none;
+}
 
+.register {
+  background-color: #f7f9fb;
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  color: #31708e;
+  font-weight: 550;
+}
 
+.userInfo {
+  position: absolute;
+  right: 16px;
+  bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 
-  /* Make textarea span full form cleanly */
-.Card textarea {
+.userInfo img {
+  height: 35px;
+  width: auto;
+  margin-bottom: -3px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.mail {
+  position: relative;
+  background-color: #f7f9fb;
+  padding: 5px;
+  padding-bottom: 2px;
+  color: #31708e;
+  border-radius: 5px;
+}
+
+.mail:hover {
+  background-color: #8fc1e3;
+  color: white;
+}
+
+.custom-badge {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  background-color: #dc3545;
+  color: white;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* page cards */
+
+.card {
+  background-color: #f7f9fb;
+  border: 2px solid #5085a5;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px;
+  width: 40vw;
+  padding: 1rem 2rem;
+}
+
+.card h2 {
+  font-family: "Suprema", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.card input[type="text"],
+.card input[type="email"],
+.card input[type="password"] {
   width: 100%;
   padding: 0.5rem;
-  font-family: 'Suprema', sans-serif;
+  font-family: "Suprema", sans-serif;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.card button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #31708e;
+  font-family: "Suprema", sans-serif;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #8fc1e3;
+}
+
+.profile-card {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* forms */
+
+.form-container {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  gap: 2rem;
+}
+
+form label {
+  font-weight: bold;
+  margin-top: 1rem;
+  display: block;
+}
+
+form span {
+  color: red;
+  margin-left: 4px;
+}
+
+#date {
+  margin-bottom: 1rem;
+}
+
+.job {
+  margin-bottom: 16px !important;
+}
+
+.card textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-family: "Suprema", sans-serif;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   resize: vertical;
   box-sizing: border-box;
 }
+
+/* job dashboard */
 
 .dashboard-wrapper {
   display: flex;
@@ -117,8 +237,10 @@ body {
   min-height: 80vh;
 }
 
-.dashboard-wrapper h1, .form-container h1{
-  margin:0;
+.dashboard-wrapper h1,
+.form-container h1,
+.dashboard-wrapper h2 {
+  margin: 0;
   font-family: Sanchez;
 }
 
@@ -135,139 +257,96 @@ body {
   min-width: 120px;
 }
 
-.job-title{
+.job-title {
   font-weight: bold;
   font-size: 1.5rem;
   padding-bottom: 5px;
 }
 
-#dashboard-category{
-  border-radius: 8px;   /* Rounds the corners of the dropdown */
+#dashboard-category {
+  border-radius: 8px; /* Rounds the corners of the dropdown */
   padding: 0.5rem 1rem; /* Adds space inside the dropdown */
   border: 1px solid #ccc; /* Gives it a light border */
-  font-size: 1rem;       /* Makes the text more readable */
+  font-size: 1rem; /* Makes the text more readable */
   background-color: #fff; /* Ensures it has a clean background */
-  cursor: pointer; 
+  cursor: pointer;
 }
 
-.dashboard-wrapper .Card {
+.dashboard-wrapper .card {
   width: 100%; /* Make the job posts take the full width of the wrapper */
   max-width: 30vw; /* Add a max width to prevent them from becoming too wide */
   margin: 0 auto; /* Center the job posts horizontally */
 }
 
 #dashboard-date {
-  border-radius: 8px;        /* Rounds the corners */
-  padding: 0.5rem 1rem;      /* Adds space inside the input box */
-  border: 1px solid #ccc;    /* Light gray border */
-  font-size: 1rem;           /* Makes text size more readable */
-  background-color: #fff;    /* Keeps background clean */
-  cursor: pointer;           /* Cursor changes on hover (optional) */
-  margin-bottom: 1rem;        /* Adds space below the element */
+  border-radius: 8px; /* Rounds the corners */
+  padding: 0.5rem 1rem; /* Adds space inside the input box */
+  border: 1px solid #ccc; /* Light gray border */
+  font-size: 1rem; /* Makes text size more readable */
+  background-color: #fff; /* Keeps background clean */
+  cursor: pointer; /* Cursor changes on hover (optional) */
+  margin-bottom: 1rem; /* Adds space below the element */
 }
 
-  .Card button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #31708E;
-    font-family: 'Suprema', sans-serif;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .Card button:hover {
-    background-color: #8FC1E3;
-  }
-
-  /* codas profile stuff */
-
-  
-
-.Card{
-    width: 40vw;
-    padding: 1rem 2rem;
+.job-meta {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.Card h2 {
-    text-align: left;
-  }
-
-.profile-Card {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-
-  .profile-pic img{
-    width: auto;
-    height: 120px;
-    border-radius: 50%;
-  }
-
-a{
-    color: #31708E;
-    text-decoration: none;
-
+#accordion-content {
+  display: none;
 }
 
+#accordion-less-btn {
+  display: block;
+  margin: 20px auto; /* Center the button */
+  padding: 10px 20px; /* Add padding */
+}
 
+/* Ensure spacing between the last two job posts in the accordion */
+#accordion-content .card + .card {
+  margin-top: 20px; /* Add spacing between consecutive job posts in the accordion */
+}
 
-  .active{
-    color: gray;
-    font-size: .8em;
-  }
+/* codas profile stuff */
 
-   b {
-    margin-right: 5px;
-  }
+.profile-pic img {
+  width: auto;
+  height: 120px;
+  border-radius: 50%;
+}
 
-  .tag {
-    background-color: #31708E;
-    border: none;
-    color: white;
-    padding: .5rem 0.75rem;
-    border-radius: 5px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.active {
+  color: gray;
+  font-size: 0.8em;
+}
 
-  .tag:hover {
-    background-color: #8FC1E3;
-  }
+.tag {
+  background-color: #31708e;
+  border: none;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  button {
-    font-size: 1rem;
-    padding: .75rem 1rem;
-    background-color: #31708E;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.tag:hover {
+  background-color: #8fc1e3;
+}
 
-   button:hover {
-    background-color: #8FC1E3;
-  }
-
-  /* end profile */
-  
- /* Button styles */
- #toastBtn {
+/* toasts */
+#toastBtn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
 
 #toastBtn.sent {
-  background-color: #8FC1E3;
+  background-color: #8fc1e3;
 }
 
-/* Toast container */
 .toast-container {
   position: fixed;
   bottom: 1rem;
@@ -281,7 +360,7 @@ a{
   border: 1px solid #ccc;
   padding: 12px 16px;
   border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   min-width: 200px;
   position: relative;
   opacity: 0;
@@ -309,7 +388,7 @@ a{
   background: none;
   border: none;
   font-size: 20px;
-  color:black;
+  color: black;
   cursor: pointer;
   height: 100%;
   display: flex;
@@ -319,17 +398,30 @@ a{
   transition: color 0.3s ease;
 }
 
-.btn-close:hover{
+.btn-close:hover {
   background: none;
-  color:gray;
+  color: gray;
 }
 
 @keyframes fadein {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeout {
-  from { opacity: 1; transform: translateY(0); }
-  to { opacity: 0; transform: translateY(20px); }
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
+
