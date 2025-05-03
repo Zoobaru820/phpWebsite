@@ -28,37 +28,32 @@
             <span class="custom-badge">4</span></a>
     </div>
 </nav>
+<div class="form-container">
+  <h1>Request Help</h1>
 
-  <main class="form-container">
-    <h1>Request Help</h1>
+  <div class="card">
+    <form>
+      <input type="text" name="title" placeholder="Job Title" required>
 
-    <div class="card">
-      <form>
-        <label for="title">Job Title<span>*</span></label>
-        <input type="text" id="title" name="title" required>
+      <textarea id="form-description" name="description" rows="5" placeholder="Description" required></textarea>
 
-        <label for="description">Description<span>*</span></label>
-        <textarea id="description" name="description" rows="5" required></textarea>
+      <select id="form-category" name="category" required>
+        <option value="" disabled selected>Select a category *</option>
+        <option value="lawncare">Lawn Care</option>
+        <option value="groceries">Grocery Delivery</option>
+        <option value="housework">Housework</option>
+        <option value="tech">Tech Help</option>
+      </select>
 
-        <label for="category">Category<span>*</span></label>
-        <select id="dashboard-category" name="category" required>
-          <option value="">Select a category</option>
-          <option value="lawncare">Lawn Care</option>
-          <option value="groceries">Grocery Delivery</option>
-          <option value="housework">Housework</option>
-          <option value="tech">Tech Help</option>
-        </select>
+      <input type="text" id="location" name="location" placeholder="Location" required>
 
-        <label for="location">Location<span>*</span></label>
-        <input type="text" id="location" name="location" required>
+      <input type="date" id="form-date" name="date" required>
 
-        <label for="date">Date Needed<span>*</span></label>
-        <input type="date" id="dashboard-date" name="date" required>
-
-        <button type="submit">Submit Request</button>
-      </form>
-    </div>
-  </main>
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+</div>
+ 
 </body>
 </html>
 

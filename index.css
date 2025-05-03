@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Suprema, sans-serif !important;
   background-color: white;
 }
 
@@ -43,18 +43,30 @@ button:hover {
 
 /* header and nav */
 
-header {
+header  {
   background-color: #31708e;
   color: white;
   padding: 1rem;
-  text-align: center;
-  font-family: Sanchez;
+  display: flex;
+  justify-content: center; /* Center the header content horizontally */
+  align-items: center; /* Align the header content vertically */
+  font-family: Sanchez, serif;
   font-size: 1.5rem;
   position: relative;
 }
 
+
+h1 {
+  font-family: "Sanchez", serif; /* Apply Sanchez font family */
+  font-size: 2rem; /* Adjust font size for consistency */
+  color: #31708e; /* Optional: Add a color to match your theme */
+  text-align: center; /* Center-align the heading */
+  margin-bottom: 1.5rem; /* Add spacing below the head */
+}
+
 header a {
   color: white;
+  text-decoration: none;
 }
 
 header h1 {
@@ -184,130 +196,39 @@ nav a {
   align-items: center;
 }
 
-/* forms */
+/* ===========================
+   FORM STYLING
+   =========================== */
 
 .form-container {
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  gap: 2rem;
+  height: 90vh;
+  gap: 1rem;
 }
 
-form label {
-  font-weight: bold;
-  margin-top: 1rem;
-  display: block;
-}
-
-form span {
-  color: red;
-  margin-left: 4px;
-}
-
-#date {
-  margin-bottom: 1rem;
-}
-
-.job {
-  margin-bottom: 16px !important;
-}
-
-.card textarea {
+form input,
+form textarea,
+form select,
+form button {
   width: 100%;
-  padding: 0.5rem;
-  font-family: "Suprema", sans-serif;
-  margin-bottom: 1rem;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem; /* Add consistent spacing between elements */
   border: 1px solid #ccc;
   border-radius: 5px;
-  resize: vertical;
+  font-family: "Suprema", sans-serif;
+  font-size: 1rem;
   box-sizing: border-box;
 }
 
-/* job dashboard */
+/* ===========================
+    END OF FORM STYLING
+   =========================== */
 
-.dashboard-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  gap: 2rem;
-  min-height: 80vh;
-}
 
-.dashboard-wrapper h1,
-.form-container h1,
-.dashboard-wrapper h2 {
-  margin: 0;
-  font-family: Sanchez;
-}
-
-.DashboardBtn-group {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-
-.DashboardBtn-group .btn {
-  padding: 0.4rem 0.9rem;
-  font-size: 0.9rem;
-  min-width: 120px;
-}
-
-.job-title {
-  font-weight: bold;
-  font-size: 1.5rem;
-  padding-bottom: 5px;
-}
-
-#dashboard-category {
-  border-radius: 8px; /* Rounds the corners of the dropdown */
-  padding: 0.5rem 1rem; /* Adds space inside the dropdown */
-  border: 1px solid #ccc; /* Gives it a light border */
-  font-size: 1rem; /* Makes the text more readable */
-  background-color: #fff; /* Ensures it has a clean background */
-  cursor: pointer;
-}
-
-.dashboard-wrapper .card {
-  width: 100%; /* Make the job posts take the full width of the wrapper */
-  max-width: 30vw; /* Add a max width to prevent them from becoming too wide */
-  margin: 0 auto; /* Center the job posts horizontally */
-}
-
-#dashboard-date {
-  border-radius: 8px; /* Rounds the corners */
-  padding: 0.5rem 1rem; /* Adds space inside the input box */
-  border: 1px solid #ccc; /* Light gray border */
-  font-size: 1rem; /* Makes text size more readable */
-  background-color: #fff; /* Keeps background clean */
-  cursor: pointer; /* Cursor changes on hover (optional) */
-  margin-bottom: 1rem; /* Adds space below the element */
-}
-
-.job-meta {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-#accordion-content {
-  display: none;
-}
-
-#accordion-less-btn {
-  display: block;
-  margin: 20px auto; /* Center the button */
-  padding: 10px 20px; /* Add padding */
-}
-
-/* Ensure spacing between the last two job posts in the accordion */
-#accordion-content .card + .card {
-  margin-top: 20px; /* Add spacing between consecutive job posts in the accordion */
-}
-
+   
 /* codas profile stuff */
 
 .profile-pic img {
