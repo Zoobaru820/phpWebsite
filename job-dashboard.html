@@ -92,8 +92,39 @@
           <button class="btn" onclick="showToast('Grocery Delivery accepted!')">Accept</button>
         </div>
       </div>
+
+      <div class="card hidden">
+        <div class="job-title">House Cleaning</div>
+        <div class="job-meta">Requested by: Sarah L. | Location: Sun Prairie, WI</div>
+        <div class="job-description">
+          Looking for someone to help clean my house, including vacuuming and dusting.
+        </div>
+        <div class="job-listing-btn-group">
+          <button class="btn">View Details</button>
+          <button class="btn" onclick="showToast('House Cleaning accepted!')">Accept</button>
+        </div>
+      </div>
+
+      <div class="card hidden">
+        <div class="job-title">Tech Support</div>
+        <div class="job-meta">Requested by: Mike R. | Location: Verona, WI</div>
+        <div class="job-description">
+          Need assistance setting up a new computer and transferring files from the old one.
+        </div>
+        <div class="job-listing-btn-group">
+          <button class="btn">View Details</button>
+          <button class="btn" onclick="showToast('Tech Support accepted!')">Accept</button>
+        </div>
+      </div>
+
+
+      <button id="show-more-btn" class="btn" onclick="toggleHiddenCards()">Show More</button>
+      <button id="show-less-btn" class="btn" onclick="toggleHiddenCards()" style="display: none;">Show Less</button>
     </div>
    </div>
+
+
+ 
 
   <!-- Toast Container -->
   <div class="toast-container">
@@ -104,38 +135,25 @@
   </div>
 
   <script>
-    function toggleAccordion() {
-      const content = document.getElementById('accordion-content');
-      const showMoreButton = document.getElementById('accordion-btn');
-      const showLessButton = document.getElementById('accordion-less-btn');
-
-      if (content.style.display === 'none' || content.style.display === '') {
-        content.style.display = 'block';
-        showMoreButton.style.display = 'none';
-        showLessButton.style.display = 'inline-block';
-      } else {
-        content.style.display = 'none';
-        showMoreButton.style.display = 'inline-block';
-        showLessButton.style.display = 'none';
-      }
-    }
+  
 
     function showToast(message) {
       const toastEl = document.getElementById('dynamicToast');
       const toastBody = toastEl.querySelector('.toast-body');
       const closeBtn = toastEl.querySelector('.btn-close');
 
+      // Set the message in the toast body
       toastBody.textContent = message;
 
       // Show the toast
       toastEl.classList.add('show');
 
-      // Hide the toast after 3 seconds
+      // Automatically hide the toast after 3 seconds
       setTimeout(() => {
         toastEl.classList.remove('show');
       }, 3000);
 
-      // Close button functionality
+      // Allow the user to manually close the toast
       closeBtn.addEventListener('click', () => {
         toastEl.classList.remove('show');
       });
@@ -157,6 +175,32 @@
       console.log('Filters applied:', { category, skillLevel, distance, urgency, location, date });
       // Add filtering logic here
     }
+
+    function toggleHiddenCards() {
+  const hiddenCards = document.querySelectorAll('.job-listings .card');
+  const showMoreButton = document.getElementById('show-more-btn');
+  const showLessButton = document.getElementById('show-less-btn');
+
+  const isShowingMore = showMoreButton.style.display !== 'none';
+
+  hiddenCards.forEach((card, index) => {
+    // Only toggle cards beyond the first two
+    if (index >= 2) {
+      if (isShowingMore) {
+        card.classList.remove('hidden');
+        card.style.display = 'block';
+      } else {
+        card.classList.add('hidden');
+        card.style.display = 'none';
+      }
+    }
+  });
+
+  // Toggle button visibility
+  showMoreButton.style.display = isShowingMore ? 'none' : 'inline-block';
+  showLessButton.style.display = isShowingMore ? 'inline-block' : 'none';
+}
+
   </script>
 </body>
 </html>
