@@ -7,56 +7,7 @@
   <link rel="stylesheet" href="index.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Sanchez&family=Suprema:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    #accordion-content {
-      display: none;
-    }
-
-    #accordion-less-btn {
-      display: block;
-      margin: 20px auto; /* Center the button */
-      padding: 10px 20px; /* Add padding */
-    }
-
-    /* Ensure spacing between the last two job posts in the accordion */
-    #accordion-content .box + .box {
-      margin-top: 20px; /* Add spacing between consecutive job posts in the accordion */
-    }
-
-    /* Toast styles */
-    .toast-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-
-    .toast {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: white;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      padding: 10px 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .toast.show {
-      opacity: 1;
-    }
-
-    .toast .btn-close {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-  </style>
+  
 </head>
 
 <body>
@@ -80,66 +31,69 @@
     </div>
 </nav>
 
-  <div class="dashboard-wrapper">
-    <h1>Job Request Dashboard</h1>
+  <div class="dashboard-container"> 
+    <!-- Filter Section -->
+    <aside class="filter-section">
+      <h2>Filter Jobs</h2>
+      <form id="filterForm">
+        <!-- Category Filter -->
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter" name="category">
+          <option value="">All Categories</option>
+          <option value="lawncare">Lawn Care</option>
+          <option value="groceries">Grocery Delivery</option>
+          <option value="housework">Housework</option>
+          <option value="tech">Tech Help</option>
+        </select>
 
-    <div class="card">
-      <div class="job-title">Lawn Mowing</div>
-      <div class="job-meta">Requested by: John D. | Location: Madison, WI</div>
-      <div class="job-description">
-        I need someone to help mow my front and back lawn. Should take about 45 minutes.
-      </div>
-      <div class="DashboardBtn-group">
-        <button class="btn">View Details</button>
-        <button class="btn" onclick="showToast('Lawn Mowing accepted!')">Accept</button>
-      </div>
-    </div>
+        <!-- Distance Slider -->
+        <label for="distanceFilter">Distance (miles)</label>
+        <input type="range" id="distanceFilter" name="distance" min="1" max="50" value="25" oninput="updateDistanceValue(this.value)">
+        <span id="distanceValue">25 miles</span>
 
-    <div class="card">
-      <div class="job-title">Grocery Delivery</div>
-      <div class="job-meta">Requested by: Maria T. | Location: Middleton, WI</div>
-      <div class="job-description">
-        Need help picking up groceries from the local store and dropping them off at my apartment.
-      </div>
-      <div class="DashboardBtn-group">
-        <button class="btn">View Details</button>
-        <button class="btn" onclick="showToast('Grocery Delivery accepted!')">Accept</button>
-      </div>
-    </div>
+        <!-- Location Filter -->
+        <label for="locationFilter">Location</label>
+        <input type="text" id="locationFilter" name="location" placeholder="Enter location">
 
-    <!-- Accordion Section -->
-    <div class="accordion">
-      <button class="btn" id="accordion-btn" onclick="toggleAccordion()">Show More</button>
-      <div id="accordion-content">
-        <div class="card">
-          <div class="job-title">House Cleaning</div>
-          <div class="job-meta">Requested by: Sarah L. | Location: Sun Prairie, WI</div>
-          <div class="job-description">
-            Looking for someone to help clean my house, including vacuuming and dusting.
-          </div>
-          <div class="DashboardBtn-group">
-            <button class="btn">View Details</button>
-            <button class="btn" onclick="showToast('House Cleaning accepted!')">Accept</button>
-          </div>
+        <!-- Date Filter -->
+        <label for="dateFilter">Date Needed</label>
+        <input type="date" id="dateFilter" name="date">
+
+        <!-- Apply Filters Button -->
+        <button type="button" onclick="applyFilters()">Apply Filters</button>
+      </form>
+    </aside>
+
+    <!-- Job Listings Section -->
+    <div class="job-listings">
+      <h1>Job Request Dashboard</h1>
+
+      <!-- Existing Job Listings -->
+      <div class="card">
+        <div class="job-title">Lawn Mowing</div>
+        <div class="job-meta">Requested by: John D. | Location: Madison, WI</div>
+        <div class="job-description">
+          I need someone to help mow my front and back lawn. Should take about 45 minutes.
         </div>
-
-        <div class="card">
-          <div class="job-title">Tech Support</div>
-          <div class="job-meta">Requested by: Mike R. | Location: Verona, WI</div>
-          <div class="job-description">
-            Need assistance setting up a new computer and transferring files from the old one.
-          </div>
-          <div class="DashboardBtn-group">
-            <button class="btn">View Details</button>
-            <button class="btn" onclick="showToast('Tech Support accepted!')">Accept</button>
-          </div>
+        <div class="job-listing-btn-group">
+          <button class="btn">View Details</button>
+          <button class="btn" onclick="showToast('Lawn Mowing accepted!')">Accept</button>
         </div>
+      </div>
 
-        <!-- Show Less Button -->
-        <button class="btn" id="accordion-less-btn" onclick="toggleAccordion()">Show Less</button>
+      <div class="card">
+        <div class="job-title">Grocery Delivery</div>
+        <div class="job-meta">Requested by: Maria T. | Location: Middleton, WI</div>
+        <div class="job-description">
+          Need help picking up groceries from the local store and dropping them off at my apartment.
+        </div>
+        <div class="job-listing-btn-group">
+          <button class="btn">View Details</button>
+          <button class="btn" onclick="showToast('Grocery Delivery accepted!')">Accept</button>
+        </div>
       </div>
     </div>
-  </div>
+   </div>
 
   <!-- Toast Container -->
   <div class="toast-container">
@@ -158,9 +112,11 @@
       if (content.style.display === 'none' || content.style.display === '') {
         content.style.display = 'block';
         showMoreButton.style.display = 'none';
+        showLessButton.style.display = 'inline-block';
       } else {
         content.style.display = 'none';
         showMoreButton.style.display = 'inline-block';
+        showLessButton.style.display = 'none';
       }
     }
 
@@ -183,6 +139,23 @@
       closeBtn.addEventListener('click', () => {
         toastEl.classList.remove('show');
       });
+    }
+
+    function updateDistanceValue(value) {
+      const distanceValue = document.getElementById('distanceValue');
+      distanceValue.textContent = `${value} miles`;
+    }
+
+    function applyFilters() {
+      const category = document.getElementById('categoryFilter').value;
+      const skillLevel = document.querySelector('input[name="skillLevel"]:checked')?.value || 'any';
+      const distance = document.getElementById('distanceFilter').value;
+      const urgency = document.querySelector('input[name="urgency"]:checked')?.value || 'any';
+      const location = document.getElementById('locationFilter').value;
+      const date = document.getElementById('dateFilter').value;
+
+      console.log('Filters applied:', { category, skillLevel, distance, urgency, location, date });
+      // Add filtering logic here
     }
   </script>
 </body>

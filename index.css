@@ -12,8 +12,8 @@ a {
   transition: color 0.3s;
 }
 
-a:hover{
-  color:#8fc1e3;
+a:hover {
+  color: #8fc1e3;
   transition: color 0.3s;
 }
 
@@ -43,26 +43,37 @@ button:hover {
 
 /* header and nav */
 
-header  {
+header {
   background-color: #31708e;
   color: white;
   padding: 1rem;
   display: flex;
-  justify-content: center; /* Center the header content horizontally */
-  align-items: center; /* Align the header content vertically */
+  justify-content: center;
+  /* Center the header content horizontally */
+  align-items: center;
+  /* Align the header content vertically */
   font-family: Sanchez, serif;
   font-size: 1.5rem;
   position: relative;
 }
+/* ===========================
+  GLOBAL STYLES FOR ELEMENTS
+   =========================== */
 
-
-h1 {
-  font-family: "Sanchez", serif; /* Apply Sanchez font family */
-  font-size: 2rem; /* Adjust font size for consistency */
-  color: #31708e; /* Optional: Add a color to match your theme */
-  text-align: center; /* Center-align the heading */
-  margin-bottom: 1.5rem; /* Add spacing below the head */
+h1,h2{
+  font-family: "Sanchez", serif;
+  /* Apply Sanchez font family */
+  font-size: 2rem;
+  /* Adjust font size for consistency */
+  color: #31708e;
+  /* Optional: Add a color to match your theme */
+  text-align: center;
+  /* Center-align the heading */
+  margin-bottom: 1rem;
+  /* Add spacing below the head */
 }
+
+
 
 header a {
   color: white;
@@ -215,7 +226,8 @@ form select,
 form button {
   width: 100%;
   padding: 0.75rem;
-  margin-bottom: 1.5rem; /* Add consistent spacing between elements */
+  margin-bottom: 1.5rem;
+  /* Add consistent spacing between elements */
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: "Suprema", sans-serif;
@@ -228,7 +240,50 @@ form button {
    =========================== */
 
 
-   
+/* ===========================
+   JOB DASHBOARD STYLING
+   =========================== */
+
+/* Two-column layout */
+.dashboard-container {
+  display: flex;
+  gap: 5rem;
+  padding: 1rem;
+  align-items: flex-start;
+ 
+}
+
+.filter-section {
+  flex: 1;
+  max-width: 20rem;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: "Suprema", sans-serif;
+}
+
+.job-listings {
+  display: flex;
+  flex-direction: column; /* Stack the cards vertically */
+  gap: 1rem;  /* Add a 1rem gap between each card */
+}
+
+.job-listing-btn-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+
+
+
+
+/* ===========================
+   END OF JOB DASHBOARD STYLING
+   =========================== */
+
 /* codas profile stuff */
 
 .profile-pic img {
@@ -329,6 +384,7 @@ form button {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -340,9 +396,9 @@ form button {
     opacity: 1;
     transform: translateY(0);
   }
+
   to {
     opacity: 0;
     transform: translateY(20px);
   }
 }
-
