@@ -267,6 +267,8 @@ form button {
   display: flex;
   flex-direction: column; /* Stack the cards vertically */
   gap: 1rem;  /* Add a 1rem gap between each card */
+  text-align: center;
+  align-items: center;
 }
 
 .job-listing-btn-group {
@@ -275,7 +277,6 @@ form button {
   gap: 0.75rem;
   margin-top: 1rem;
 }
-
 
 
 .hidden {
