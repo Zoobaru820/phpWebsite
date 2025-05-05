@@ -247,7 +247,7 @@ form button {
 /* Two-column layout */
 .dashboard-container {
   display: flex;
-  gap: 4rem;
+  gap: 10rem;
   padding: 1rem;
   align-items: flex-start;
  
