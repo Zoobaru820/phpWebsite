@@ -252,7 +252,7 @@ form button {
 /* Two-column layout */
 .dashboard-container {
   display: flex;
-  gap: 10rem;
+  gap: 4rem;
   padding: 1rem;
   align-items: flex-start;
  
