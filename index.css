@@ -258,6 +258,21 @@ form button {
  
 }
 
+
+
+
+@media (max-width: 1440px) and (max-height: 824px) {
+  .job-listings-dashboard {
+    margin-right: 3rem;
+  }
+ 
+  
+}
+@media (min-width: 1600px) and (max-width: 1920px) and (max-height: 911px) {
+  .job-listings-dashboard {
+    margin-left: 6rem;
+  }
+}
 .filter-section {
   flex: 1;
   max-width: 20rem;
@@ -275,6 +290,16 @@ form button {
   text-align: center;
   align-items: center;
 }
+
+
+.job-listings-dashboard{
+  display: flex;
+  flex-direction: column; /* Stack the cards vertically */
+  gap: 1rem;  /* Add a 1rem gap between each card */
+  text-align: center;
+  align-items: center;
+}
+
 
 .job-listing-btn-group {
   display: flex;
