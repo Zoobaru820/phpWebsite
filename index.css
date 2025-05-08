@@ -178,6 +178,19 @@ nav a {
   margin-bottom: 1rem;
 }
 
+
+.card-header{
+  font-family: "Suprema", sans-serif;
+  font-weight: bold;
+  margin-bottom: 1rem; /* Add a gap below the card header */
+}
+
+.card-body{
+  font-family: "Suprema", sans-serif;
+  margin-bottom: 1rem; /* Add a gap below the card header */
+}
+
+
 .card input[type="text"],
 .card input[type="email"],
 .card input[type="password"] {
